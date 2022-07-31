@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    background-color: hsl(205, 14%, 28%);
+}
+
+.parent {
+    width: 800px;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid white;
+    position: absolute;
+    transform: translate(-50%, -50%);;
+    top: 50%;
+    left: 50%;
+}
+
+.child {
+    border: 1px solid white;
+    height: 60px;
+    width: 60px;
+    box-sizing: border-box;
+    margin: 10px;
+
+}
+
+@keyframes event-fired-animation {
+	from {
+		background-color: red;
+	}
+	to {
+		background-color: white;
+	}
+}
+
+/* The element to apply the animation to */
+.event-fired {
+	animation-name: event-fired-animation;
+	animation-duration: 0.1s;
+}
