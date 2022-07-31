@@ -21,15 +21,15 @@ for (let i = 0; i < boxCount; i++) {
 }
 
 const highlight = (e) => {
-	e.preventDefault();
-	const fromElement = e.fromElement;
-	if (fromElement && fromElement.classList.contains('child')) {
-		fromElement.classList.add('event-fired');
+	const childElement = e.path[0];
+	
+	if (childElement && childElement.classList.contains('child')) {
+		childElement.classList.add('event-fired');
 		setTimeout(() => {
-			fromElement.classList.remove('event-fired');
+			childElement.classList.remove('event-fired');
 		}, 100);
 	}
 };
 
-parent.addEventListener('mouseover', highlight, false);
+parent.addEventListener('mousemove', highlight, true);
 document.body.append(parent);
